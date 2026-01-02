@@ -1,15 +1,8 @@
-version: 1
+command:
+  - bash
+  - -lc
+  - |
+      uvicorn app:app --host 0.0.0.0 --port 8080
 
-apps:
-  - name: scribe
-    type: custom
-    runtime:
-      python:
-        version: "3.11"
-    command:
-      - bash
-      - -lc
-      - |
-          uvicorn app:app --host 0.0.0.0 --port 8080
-    env:
-      PYTHONUNBUFFERED: "1"
+env:
+  PYTHONUNBUFFERED: "1"
